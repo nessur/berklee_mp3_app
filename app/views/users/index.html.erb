@@ -2,12 +2,14 @@
 
 <table>
   <tr>
+    <th>ID</th>
     <th>Name</th>
     <th>Email</th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
+    <td><%=h user.id %></td>
     <td><%=h user.name %></td>
     <td><%=h user.email %></td>
     <td><%= link_to 'Show', user %></td>
