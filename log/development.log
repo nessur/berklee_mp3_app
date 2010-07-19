@@ -1456,3 +1456,130 @@ Rendering mp3s/random
   [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
   [4;35;1mSQL (0.3ms)[0m   [0mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
 Completed in 34ms (View: 22, DB: 2) | 200 OK [http://localhost/mp3s/random]
+
+
+Processing Mp3sController#index (for 127.0.0.1 at 2010-07-19 10:26:41) [GET]
+  [4;36;1mMp3 Load (10.2ms)[0m   [0;1mSELECT * FROM "mp3s" [0m
+Rendering template within layouts/mp3s
+Rendering mp3s/index
+Completed in 356ms (View: 264, DB: 10) | 200 OK [http://localhost/mp3s]
+
+
+Processing Mp3sController#index (for 127.0.0.1 at 2010-07-19 10:27:16) [GET]
+  [4;35;1mMp3 Load (0.9ms)[0m   [0mSELECT * FROM "mp3s" [0m
+Rendering template within layouts/mp3s
+Rendering mp3s/index
+Completed in 196ms (View: 99, DB: 1) | 200 OK [http://localhost/mp3s]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:27:18) [GET]
+  Parameters: {"artist_name"=>"Go", "rating_min"=>"2"}
+  [4;36;1mMp3 Load (0.7ms)[0m   [0;1mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id WHERE (artist_name LIKE '%Go%') GROUP BY url,artist_name, title, length HAVING AVG(ratings.value) >= 2 ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+Completed in 79ms (View: 10, DB: 1) | 200 OK [http://localhost/mp3s/random?artist_name=Go&rating_min=2]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:27:27) [GET]
+  Parameters: {"artist_name"=>"Go", "rating_min"=>"1"}
+  [4;35;1mMp3 Load (0.9ms)[0m   [0mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id WHERE (artist_name LIKE '%Go%') GROUP BY url,artist_name, title, length HAVING AVG(ratings.value) >= 1 ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;36;1mSQL (155.0ms)[0m   [0;1mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+Completed in 182ms (View: 16, DB: 156) | 200 OK [http://localhost/mp3s/random?artist_name=Go&rating_min=1]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:27:49) [GET]
+  Parameters: {"artist_name"=>"Go", "rating_min"=>"1"}
+  [4;35;1mMp3 Load (0.9ms)[0m   [0mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id WHERE (artist_name LIKE '%Go%') GROUP BY url,artist_name, title, length HAVING AVG(ratings.value) >= 1 ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+Completed in 41ms (View: 30, DB: 1) | 200 OK [http://localhost/mp3s/random?artist_name=Go&rating_min=1]
+
+
+Processing Mp3sController#index (for 127.0.0.1 at 2010-07-19 10:27:52) [GET]
+  [4;35;1mMp3 Load (0.9ms)[0m   [0mSELECT * FROM "mp3s" [0m
+Rendering template within layouts/mp3s
+Rendering mp3s/index
+Completed in 336ms (View: 26, DB: 1) | 200 OK [http://localhost/mp3s]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:27:54) [GET]
+  Parameters: {"artist_name"=>"Go", "rating_min"=>"1"}
+  [4;36;1mMp3 Load (1.1ms)[0m   [0;1mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id WHERE (artist_name LIKE '%Go%') GROUP BY url,artist_name, title, length HAVING AVG(ratings.value) >= 1 ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+Completed in 102ms (View: 90, DB: 2) | 200 OK [http://localhost/mp3s/random?artist_name=Go&rating_min=1]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:27:57) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;36;1mMp3 Load (0.9ms)[0m   [0;1mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length HAVING AVG(ratings.value) >= 2 ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+Completed in 28ms (View: 11, DB: 1) | 200 OK [http://localhost/mp3s/random?rating_min=2]
+
+
+Processing Mp3sController#index (for 127.0.0.1 at 2010-07-19 10:28:53) [GET]
+  [4;36;1mMp3 Load (0.9ms)[0m   [0;1mSELECT * FROM "mp3s" [0m
+Rendering template within layouts/mp3s
+Rendering mp3s/index
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 4) [0m
+Completed in 42ms (View: 33, DB: 2) | 200 OK [http://localhost/mp3s]
+
+
+Processing Mp3sController#new_rating (for 127.0.0.1 at 2010-07-19 10:29:10) [GET]
+  Parameters: {"mp3_id"=>"4"}
+  [4;36;1mMp3 Load (0.3ms)[0m   [0;1mSELECT * FROM "mp3s" WHERE ("mp3s"."id" = 4) [0m
+Rendering template within layouts/mp3s
+Rendering mp3s/new_rating
+Completed in 35ms (View: 5, DB: 0) | 200 OK [http://localhost/mp3s/new_rating/4]
+
+
+Processing RatingsController#create (for 127.0.0.1 at 2010-07-19 10:29:13) [POST]
+  Parameters: {"rating"=>{"mp3_id"=>"4", "value"=>"2"}, "commit"=>"Create", "authenticity_token"=>"sERUT0dYrxxibNH3+NIukatUQGQTiu/vdvGZHnMtcdM="}
+  [4;35;1mRating Create (0.5ms)[0m   [0mINSERT INTO "ratings" ("mp3_id", "created_at", "updated_at", "value") VALUES(4, '2010-07-19 14:29:13', '2010-07-19 14:29:13', 2)[0m
+Redirected to http://localhost:3000/ratings/9
+Completed in 14ms (DB: 1) | 302 Found [http://localhost/ratings]
+
+
+Processing RatingsController#show (for 127.0.0.1 at 2010-07-19 10:29:13) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mRating Load (0.3ms)[0m   [0;1mSELECT * FROM "ratings" WHERE ("ratings"."id" = 9) [0m
+Rendering template within layouts/ratings
+Rendering ratings/show
+Completed in 124ms (View: 4, DB: 0) | 200 OK [http://localhost/ratings/9]
+
+
+Processing Mp3sController#index (for 127.0.0.1 at 2010-07-19 10:29:15) [GET]
+  [4;35;1mMp3 Load (0.9ms)[0m   [0mSELECT * FROM "mp3s" [0m
+Rendering template within layouts/mp3s
+Rendering mp3s/index
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 4) [0m
+Completed in 37ms (View: 29, DB: 2) | 200 OK [http://localhost/mp3s]
+
+
+Processing Mp3sController#show (for 127.0.0.1 at 2010-07-19 10:29:18) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mMp3 Load (0.3ms)[0m   [0mSELECT * FROM "mp3s" WHERE ("mp3s"."id" = 4) [0m
+Rendering template within layouts/mp3s
+Rendering mp3s/show
+  [4;36;1mRating Load (0.5ms)[0m   [0;1mSELECT * FROM "ratings" WHERE ("ratings".mp3_id = 4) [0m
+Completed in 27ms (View: 18, DB: 1) | 200 OK [http://localhost/mp3s/4]
+
+
+Processing Mp3sController#index (for 127.0.0.1 at 2010-07-19 10:29:19) [GET]
+  [4;35;1mMp3 Load (0.9ms)[0m   [0mSELECT * FROM "mp3s" [0m
+Rendering template within layouts/mp3s
+Rendering mp3s/index
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 4) [0m
+Completed in 34ms (View: 25, DB: 2) | 200 OK [http://localhost/mp3s]

@@ -10,10 +10,10 @@
 <h2><%= link_to 'Rand Mp3s, 1 star', :action => 'random', :rating_min => 1 %></h2>
 
 
+<h2><%= link_to 'Rand Mp3s, 1 star, Go', :action => 'random', :rating_min => 1, :artist_name => 'Go' %></h2>
+
+
 <h2><%= link_to 'Rand Mp3s, 2 star', :action => 'random', :rating_min => 2 %></h2>
-
-
-<h2><%= link_to 'Rand Mp3s, 3 star', :action => 'random', :rating_min => 3 %></h2>
 
 
 
@@ -33,7 +33,7 @@
     <td><%=h mp3.title %></td>
     <td><%=h mp3.artist_name %></td>
     <td><%=h mp3.length %></td>
-    <td>--rating--</td>
+    <td><%=h mp3.ratings.average('value') %></td>
     <td><%= link_to 'Rate This', :action => 'new_rating' , :mp3_id => mp3.id %></td>
     <td><%= link_to 'Show', mp3 %></td>
     <td><%= link_to 'Edit', edit_mp3_path(mp3) %></td>
