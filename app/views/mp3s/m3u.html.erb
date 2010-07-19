@@ -1,0 +1,7 @@
+#EXTM3U
+<br/>
+<% @mp3s.each do |mp3| %>
+#EXTINF:<%=h mp3.length %>,<%=h mp3.artist_name %> - <%=h mp3.title %>
+<%=h mp3.url %>
+<br/>
+<% end %>

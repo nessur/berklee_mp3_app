@@ -4,12 +4,12 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :value %><br />
+    <b><%= f.label :value %></b><br />
     <%= f.text_field :value %>
   </p>
   <p>
-    <%= f.label :mp3_id %><br />
-    <%= f.text_field :mp3_id %>
+    <b>Mp3 Name </b><br/>
+    <%=h @rating.mp3.artist_name + " - " + @rating.mp3.title %>
   </p>
   <p>
     <%= f.submit 'Update' %>

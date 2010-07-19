@@ -96,15 +96,19 @@ class Mp3sController < ApplicationController
   
   def random
 
-      conditions = ["artist_name LIKE ?", "%#{params[:artist_name]}%"] unless params[:artist_name].nil?
-      
-      group_by = 'mp3s.id, url, artist_name, title, length '
-      
-      having = ["AVG(ratings.value) >= ?", Integer(params[:rating_min]) ] unless params[:rating_min].nil?
+    @min = params[:rating_min]
+    
+    @artist_name = params[:artist_name]  
 
-      sort = 'RANDOM()'
+    conditions = ["artist_name LIKE ?", "%#{params[:artist_name]}%"] unless params[:artist_name].nil?
+    
+    group_by = 'mp3s.id, url, artist_name, title, length '
       
-      select = 'mp3s.url, mp3s.id, mp3s.artist_name, mp3s.title, mp3s.length, AVG(ratings.value) as avg_rating'
+    having = ["AVG(ratings.value) >= ?", Integer(params[:rating_min]) ] unless params[:rating_min].nil?
+
+    sort = 'RANDOM()'
+      
+    select = 'mp3s.url, mp3s.id, mp3s.artist_name, mp3s.title, mp3s.length, AVG(ratings.value) as avg_rating'
 
     #SELECT url, artist_name, title, length, AVG(ratings.value) as avg_rating FROM "mp3s"   
     #INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id   GROUP BY url,artist_name, title, length  HAVING AVG(rtings.value) >= '1' ORDER BY RANDOM()
@@ -116,6 +120,15 @@ class Mp3sController < ApplicationController
                          :group => group_by,
                          :having => having,
                          :select => select
+                         
+    if params[:m3u]       
+      response.headers['Content-Type'] = 'text' # I've also seen this for CSV files: 'text/csv; charset=iso-8859-1; header=present'
+      response.headers['Content-Disposition'] = 'attachment; filename=playlist.m3u'
+
+      render 'm3u'
+    else
+      render 'random'
+    end
                           
   end
   

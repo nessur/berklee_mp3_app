@@ -1,22 +1,30 @@
 <h1>All Your Mp3s</h1>
 
+<ol>
 
-<h2><%= link_to 'Add New Mp3', new_mp3_path %></h2>
+<li><h2><%= link_to 'Add New Mp3', new_mp3_path %></h2>
+</li>
 
+<li><h2><%= link_to 'Rand Mp3s', :action => 'random' %></h2>
+</li>
+<ol>
+<li><h2><%= link_to 'Rand Mp3s, 1 star', :action => 'random', :rating_min => 1 %></h2>
+</li>
 
-<h2><%= link_to 'Rand Mp3s', :action => 'random' %></h2>
+<li>
+<h2><%= link_to 'Rand Mp3s, 1 star, artist like \'Go\'', :action => 'random', :rating_min => 1, :artist_name => 'Go' %></h2>
+</li>
 
-
-<h2><%= link_to 'Rand Mp3s, 1 star', :action => 'random', :rating_min => 1 %></h2>
-
-
-<h2><%= link_to 'Rand Mp3s, 1 star, Go', :action => 'random', :rating_min => 1, :artist_name => 'Go' %></h2>
-
-
+<li>
 <h2><%= link_to 'Rand Mp3s, 2 star', :action => 'random', :rating_min => 2 %></h2>
+</li>
 
+<li>
+<h2><%= link_to 'Rand Mp3s, 2 star, m3u playlist', :action => 'random', :rating_min => 2, :m3u => 1 %></h2>
+</li>
 
-
+</ol>
+</ol>
 
 <table>
   <tr>
@@ -29,7 +37,7 @@
 
 <% @mp3s.each do |mp3| %>
   <tr>
-    <td><a href="/storage/mp3<%=h mp3.url %>">DOWNLOAD</a></td>
+    <td><a href="<%=h mp3.url %>">DOWNLOAD</a></td>
     <td><%=h mp3.title %></td>
     <td><%=h mp3.artist_name %></td>
     <td><%=h mp3.length %></td>
