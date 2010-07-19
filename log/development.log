@@ -1583,3 +1583,49 @@ Rendering mp3s/index
   [4;35;1mSQL (0.3ms)[0m   [0mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
   [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 4) [0m
 Completed in 34ms (View: 25, DB: 2) | 200 OK [http://localhost/mp3s]
+
+
+Processing Mp3sController#index (for 127.0.0.1 at 2010-07-19 12:05:30) [GET]
+  [4;35;1mMp3 Load (0.9ms)[0m   [0mSELECT * FROM "mp3s" [0m
+Rendering template within layouts/mp3s
+Rendering mp3s/index
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 4) [0m
+Completed in 58ms (View: 49, DB: 2) | 200 OK [http://localhost/mp3s]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 12:05:31) [GET]
+  Parameters: {"rating_min"=>"1"}
+  [4;35;1mMp3 Load (0.0ms)[0m   [0mSQLite3::SQLException: no such column: itle: SELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, itle, length HAVING AVG(ratings.value) >= 1 ORDER BY RANDOM()[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: itle: SELECT "mp3s".* FROM "mp3s"   INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id   GROUP BY url,artist_name, itle, length  HAVING AVG(ratings.value) >= 1 ORDER BY RANDOM()):
+  app/controllers/mp3s_controller.rb:115:in `random'
+
+Rendered rescues/_trace (74.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#random (for 127.0.0.1 at 2010-07-19 12:06:22) [GET]
+  Parameters: {"rating_min"=>"1"}
+
+SyntaxError (/Users/Russen/rails_projects/berklee_mp3_app/app/controllers/mp3s_controller.rb:120: syntax error, unexpected tASSOC, expecting kEND
+                         :select => select
+                                   ^):
+  
+
+Rendered rescues/_trace (59.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 12:06:28) [GET]
+  Parameters: {"rating_min"=>"1"}
+  [4;36;1mMp3 Load (1.1ms)[0m   [0;1mSELECT mp3s.url, mp3s.id, mp3s.artist_name, mp3s.title, mp3s.length, AVG(ratings.value) as avg_rating FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name,title, length HAVING AVG(ratings.value) >= 1 ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 4) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+Completed in 67ms (View: 21, DB: 3) | 200 OK [http://localhost/mp3s/random?rating_min=1]

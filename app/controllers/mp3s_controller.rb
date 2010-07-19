@@ -102,11 +102,7 @@ class Mp3sController < ApplicationController
 
       sort = 'RANDOM()'
       
-      #select = 'mp3s.url as mp3_url, mp3s.id as mp3_id, artist_name, title, length, AVG(ratings.value) as avg_rating'
-
-      items_per_page = 100
-
-    #  @mp3s = Mp3.paginate(:order => sort, :conditions => conditions, :per_page => items_per_page, :page => 1)
+      select = 'mp3s.url, mp3s.id, mp3s.artist_name, mp3s.title, mp3s.length, AVG(ratings.value) as avg_rating'
 
     #SELECT url, artist_name, title, length, AVG(ratings.value) as avg_rating FROM "mp3s"   
     #INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id   GROUP BY url,artist_name, title, length  HAVING AVG(rtings.value) >= '1' ORDER BY RANDOM()
@@ -115,14 +111,10 @@ class Mp3sController < ApplicationController
     @mp3s = Mp3.find :all, :order => 'RANDOM()', 
                          :conditions => conditions,
                          :joins => :ratings,
-                         :group => 'url,artist_name, title, length ',
-                         :having => having
-                      #   :select => select
+                         :group => 'url,artist_name,title, length ',
+                         :having => having,
+                         :select => select
                           
-      
-      #bugs = Bug.find :all, :order => 'id DESC',
-      #    :conditions => ['status_id = "3" AND date_fixed > ? AND date_fixed <= ? AND product_id = ?', start_date, end_date, params[:id]]
-    
   end
   
   
