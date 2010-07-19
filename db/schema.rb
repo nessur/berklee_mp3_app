@@ -9,11 +9,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100718222034) do
+ActiveRecord::Schema.define(:version => 20100719003122) do
 
   create_table "microposts", :force => true do |t|
     t.string   "content"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "mp3s", :force => true do |t|
+    t.string   "url"
+    t.string   "title"
+    t.string   "artist_name"
+    t.integer  "length"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ratings", :force => true do |t|
+    t.integer  "value"
+    t.integer  "mp3_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

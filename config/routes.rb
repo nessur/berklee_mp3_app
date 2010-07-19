@@ -1,4 +1,16 @@
 ActionController::Routing::Routes.draw do |map|
+  
+  map.home '/', :controller => 'mp3s', :action => 'index'
+  
+  map.connect '/mp3s/new_rating/:mp3_id', :controller => 'mp3s', :action => 'new_rating'
+  
+  map.connect '/mp3s/random', :controller => 'mp3s', :action => 'random'
+  
+  
+  map.resources :mp3s
+
+  map.resources :ratings
+
   map.resources :microposts
 
   map.resources :users

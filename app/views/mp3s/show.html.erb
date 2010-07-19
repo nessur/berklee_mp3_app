@@ -1,0 +1,51 @@
+<h1>Mp3 Details</h1>
+
+<p>
+  <b>Url:</b>
+  <%=h @mp3.url %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @mp3.title %>
+</p>
+
+<p>
+  <b>Artist name:</b>
+  <%=h @mp3.artist_name %>
+</p>
+
+<p>
+  <b>Length:</b>
+  <%=h @mp3.length %>
+</p>
+
+
+<%= link_to 'Add New Rating', :action => 'new_rating' , :mp3_id => @mp3.id %>
+<br/>
+<br/>
+
+
+<h2>Ratings for this MP3</h2>
+
+<table>
+  <tr>
+    <th>Stars</th>
+    
+  </tr>
+
+<% @mp3.ratings.each do |rating| %>
+  <tr>
+    <td><%=h rating.value %></td>
+    
+    <td><%= link_to 'Show', rating %></td>
+    <td><%= link_to 'Edit', edit_rating_path(rating) %></td>
+    <td><%= link_to 'Destroy', rating, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br/><br/>
+
+<%= link_to 'Edit', edit_mp3_path(@mp3) %> |
+<%= link_to 'Back', mp3s_path %>

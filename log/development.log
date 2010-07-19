@@ -198,3 +198,1261 @@ Migrating to CreateMicroposts (20100718222034)
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
   [4;36;1mMicropost Load (0.6ms)[0m   [0;1mSELECT * FROM "microposts" WHERE ("microposts".user_id = 1) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100718214141)
+Migrating to CreateMicroposts (20100718222034)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("microposts")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100718214141)
+Migrating to CreateMicroposts (20100718222034)
+Migrating to CreateMp3s (20100719002752)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100718214141)
+Migrating to CreateMicroposts (20100718222034)
+Migrating to CreateMp3s (20100719002752)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100718214141)
+Migrating to CreateMicroposts (20100718222034)
+Migrating to CreateMp3s (20100719002752)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100718214141)
+Migrating to CreateMicroposts (20100718222034)
+Migrating to CreateRatings (20100719002759)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE TABLE "ratings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" integer, "mp3_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100719002759')[0m
+Migrating to CreateMp3s (20100719003122)
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "mp3s" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar(255), "title" varchar(255), "artist_name" varchar(255), "length" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100719003122')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("microposts")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("mp3s")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("ratings")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:21:57) [GET]
+  Parameters: {"artist_name"=>"True"}
+
+ArgumentError (:page parameter required):
+  /Library/Ruby/Gems/1.8/gems/will_paginate-2.3.12/lib/will_paginate/finder.rb:244:in `wp_parse_options'
+  /Library/Ruby/Gems/1.8/gems/will_paginate-2.3.12/lib/will_paginate/finder.rb:66:in `paginate'
+  app/controllers/mp3s_controller.rb:103:in `random'
+
+Rendered rescues/_trace (68.8ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:24:11) [GET]
+  Parameters: {"artist_name"=>"True"}
+  [4;36;1mMp3 Load (1.0ms)[0m   [0;1mSELECT * FROM "mp3s" WHERE (artist_name LIKE '%True%') ORDER BY RANDOM() LIMIT 100 OFFSET 0[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+Completed in 86ms (View: 78, DB: 1) | 200 OK [http://localhost/mp3s/random?artist_name=True]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:24:25) [GET]
+  [4;36;1mMp3 Load (1.0ms)[0m   [0;1mSELECT * FROM "mp3s" ORDER BY RANDOM() LIMIT 100 OFFSET 0[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+Completed in 28ms (View: 20, DB: 2) | 200 OK [http://localhost/mp3s/random]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:25:59) [GET]
+  [4;35;1mMp3 Load (0.9ms)[0m   [0mSELECT * FROM "mp3s" ORDER BY RANDOM() LIMIT 100 OFFSET 0[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+Completed in 27ms (View: 20, DB: 1) | 200 OK [http://localhost/mp3s/random]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:26:12) [GET]
+  Parameters: {"rating_min"=>"2"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/controllers/mp3s_controller.rb:101:in `random'
+
+Rendered rescues/_trace (61.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:26:57) [GET]
+  Parameters: {"rating_min"=>"2"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/controllers/mp3s_controller.rb:103:in `random'
+
+Rendered rescues/_trace (65.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:27:15) [GET]
+  Parameters: {"rating_min"=>"2"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/controllers/mp3s_controller.rb:103:in `random'
+
+Rendered rescues/_trace (156.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:27:30) [GET]
+  Parameters: {"rating_min"=>"2"}
+
+TypeError (can't convert Array into String):
+  app/controllers/mp3s_controller.rb:103:in `random'
+
+Rendered rescues/_trace (64.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:28:04) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;36;1mMp3 Load (0.9ms)[0m   [0;1mSELECT * FROM "mp3s" ORDER BY RANDOM() LIMIT 100 OFFSET 0[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+Completed in 27ms (View: 19, DB: 1) | 200 OK [http://localhost/mp3s/random?rating_min=2]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:28:14) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;35;1mMp3 Load (1.0ms)[0m   [0mSELECT * FROM "mp3s" ORDER BY RANDOM() LIMIT 100 OFFSET 0[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+Completed in 27ms (View: 19, DB: 2) | 200 OK [http://localhost/mp3s/random?rating_min=2]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:28:27) [GET]
+  Parameters: {"rating_min"=>"7"}
+  [4;36;1mMp3 Load (1.0ms)[0m   [0;1mSELECT * FROM "mp3s" ORDER BY RANDOM() LIMIT 100 OFFSET 0[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+Completed in 120ms (View: 112, DB: 2) | 200 OK [http://localhost/mp3s/random?rating_min=7]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:28:53) [GET]
+  Parameters: {"artist_name"=>"Go", "rating_min"=>"7"}
+  [4;35;1mMp3 Load (0.9ms)[0m   [0mSELECT * FROM "mp3s" WHERE (artist_name LIKE '%Go%') ORDER BY RANDOM() LIMIT 100 OFFSET 0[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://localhost/mp3s/random?rating_min=7&artist_name=Go]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:29:29) [GET]
+  Parameters: {"artist_name"=>"Go", "rating_min"=>"7"}
+  [4;35;1mMp3 Load (0.8ms)[0m   [0mSELECT * FROM "mp3s" WHERE (artist_name LIKE '%Go%') ORDER BY RANDOM() LIMIT 100 OFFSET 0[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+Completed in 21ms (View: 14, DB: 1) | 200 OK [http://localhost/mp3s/random?rating_min=7&artist_name=Go]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:29:43) [GET]
+  Parameters: {"artist_name"=>"Go", "rating_min"=>"7"}
+
+NameError (undefined local variable or method `conditions' for #<Mp3sController:0x2d8b4c0>):
+  app/controllers/mp3s_controller.rb:107:in `random'
+
+Rendered rescues/_trace (61.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:30:01) [GET]
+  Parameters: {"artist_name"=>"Go", "rating_min"=>"7"}
+  [4;35;1mMp3 Load (0.0ms)[0m   [0mSQLite3::SQLException: no such column: rating.value: SELECT * FROM "mp3s" WHERE (rating.value >= '%7%') ORDER BY RANDOM() LIMIT 100 OFFSET 0[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: rating.value: SELECT * FROM "mp3s" WHERE (rating.value >= '%7%')  ORDER BY RANDOM() LIMIT 100 OFFSET 0):
+  /Library/Ruby/Gems/1.8/gems/will_paginate-2.3.12/lib/will_paginate/finder.rb:82:in `send'
+  /Library/Ruby/Gems/1.8/gems/will_paginate-2.3.12/lib/will_paginate/finder.rb:82:in `paginate'
+  /Library/Ruby/Gems/1.8/gems/will_paginate-2.3.12/lib/will_paginate/collection.rb:87:in `create'
+  /Library/Ruby/Gems/1.8/gems/will_paginate-2.3.12/lib/will_paginate/finder.rb:76:in `paginate'
+  app/controllers/mp3s_controller.rb:107:in `random'
+
+Rendered rescues/_trace (170.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:30:16) [GET]
+  Parameters: {"artist_name"=>"Go", "rating_min"=>"7"}
+  [4;36;1mMp3 Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: rating.value: SELECT * FROM "mp3s" WHERE (rating.value >= '7') ORDER BY RANDOM() LIMIT 100 OFFSET 0[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: rating.value: SELECT * FROM "mp3s" WHERE (rating.value >= '7')  ORDER BY RANDOM() LIMIT 100 OFFSET 0):
+  /Library/Ruby/Gems/1.8/gems/will_paginate-2.3.12/lib/will_paginate/finder.rb:82:in `send'
+  /Library/Ruby/Gems/1.8/gems/will_paginate-2.3.12/lib/will_paginate/finder.rb:82:in `paginate'
+  /Library/Ruby/Gems/1.8/gems/will_paginate-2.3.12/lib/will_paginate/collection.rb:87:in `create'
+  /Library/Ruby/Gems/1.8/gems/will_paginate-2.3.12/lib/will_paginate/finder.rb:76:in `paginate'
+  app/controllers/mp3s_controller.rb:107:in `random'
+
+Rendered rescues/_trace (82.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:30:35) [GET]
+  Parameters: {"artist_name"=>"Go"}
+  [4;35;1mMp3 Load (0.8ms)[0m   [0mSELECT * FROM "mp3s" WHERE (artist_name LIKE '%Go%') ORDER BY RANDOM() LIMIT 100 OFFSET 0[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+Completed in 23ms (View: 14, DB: 1) | 200 OK [http://localhost/mp3s/random?artist_name=Go]
+
+
+Processing ApplicationController#random (for 127.0.0.1 at 2010-07-19 09:42:05) [GET]
+  Parameters: {"artist_name"=>"Go", "rating_min"=>"7"}
+
+SyntaxError (/Users/Russen/rails_projects/berklee_mp3_app/app/controllers/mp3s_controller.rb:107: syntax error, unexpected tIVAR, expecting kEND
+    //  @mp3s = Mp3.paginate(:order => sort...
+             ^):
+  
+
+Rendered rescues/_trace (145.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:42:14) [GET]
+  Parameters: {"artist_name"=>"Go", "rating_min"=>"7"}
+  [4;35;1mMp3 Load (0.0ms)[0m   [0mSQLite3::SQLException: no such column: rating.value: SELECT * FROM "mp3s" WHERE (rating.value >= '7') ORDER BY RANDOM()[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: rating.value: SELECT * FROM "mp3s" WHERE (rating.value >= '7')  ORDER BY RANDOM()):
+  app/controllers/mp3s_controller.rb:112:in `random'
+
+Rendered rescues/_trace (74.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#random (for 127.0.0.1 at 2010-07-19 09:42:28) [GET]
+  Parameters: {"artist_name"=>"Go", "rating_min"=>"7"}
+
+SyntaxError (/Users/Russen/rails_projects/berklee_mp3_app/app/controllers/mp3s_controller.rb:114: syntax error, unexpected tIDENTIFIER, expecting tASSOC):
+  
+
+Rendered rescues/_trace (158.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:42:48) [GET]
+  Parameters: {"artist_name"=>"Go", "rating_min"=>"7"}
+  [4;36;1mMp3 Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: rating.value: SELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id WHERE (rating.value >= '7') ORDER BY RANDOM()[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: rating.value: SELECT "mp3s".* FROM "mp3s"   INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id  WHERE (rating.value >= '7')  ORDER BY RANDOM()):
+  app/controllers/mp3s_controller.rb:112:in `random'
+
+Rendered rescues/_trace (75.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:43:06) [GET]
+  Parameters: {"artist_name"=>"Go", "rating_min"=>"7"}
+  [4;35;1mMp3 Load (0.6ms)[0m   [0mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id WHERE (ratings.value >= '7') ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+Completed in 12ms (View: 2, DB: 1) | 200 OK [http://localhost/mp3s/random?rating_min=7&artist_name=Go]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:43:12) [GET]
+  Parameters: {"artist_name"=>"Go", "rating_min"=>"1 "}
+  [4;36;1mMp3 Load (0.7ms)[0m   [0;1mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id WHERE (ratings.value >= '1 ') ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+Completed in 15ms (View: 2, DB: 1) | 200 OK [http://localhost/mp3s/random?rating_min=1%20&artist_name=Go]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:43:17) [GET]
+  Parameters: {"artist_name"=>"Go", "rating_min"=>"1"}
+  [4;35;1mMp3 Load (1.2ms)[0m   [0mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id WHERE (ratings.value >= '1') ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+Completed in 132ms (View: 30, DB: 2) | 200 OK [http://localhost/mp3s/random?rating_min=1&artist_name=Go]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:48:25) [GET]
+  Parameters: {"artist_name"=>"Go", "rating_min"=>"1"}
+  [4;35;1mMp3 Load (1.0ms)[0m   [0mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id WHERE (ratings.value >= '1') GROUP BY url,artist_name, title, length ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+Completed in 27ms (View: 15, DB: 2) | 200 OK [http://localhost/mp3s/random?rating_min=1&artist_name=Go]
+
+
+Processing Mp3sController#show (for 127.0.0.1 at 2010-07-19 09:48:33) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMp3 Load (0.3ms)[0m   [0;1mSELECT * FROM "mp3s" WHERE ("mp3s"."id" = 2) [0m
+Rendering template within layouts/mp3s
+Rendering mp3s/show
+  [4;35;1mRating Load (0.7ms)[0m   [0mSELECT * FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+Completed in 41ms (View: 32, DB: 1) | 200 OK [http://localhost/mp3s/2]
+
+
+Processing Mp3sController#show (for 127.0.0.1 at 2010-07-19 09:48:51) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mMp3 Load (0.4ms)[0m   [0;1mSELECT * FROM "mp3s" WHERE ("mp3s"."id" = 3) [0m
+Rendering template within layouts/mp3s
+Rendering mp3s/show
+  [4;35;1mRating Load (0.4ms)[0m   [0mSELECT * FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+Completed in 24ms (View: 14, DB: 1) | 200 OK [http://localhost/mp3s/3]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:49:00) [GET]
+  Parameters: {"artist_name"=>"Go", "rating_min"=>"2"}
+  [4;36;1mMp3 Load (1.0ms)[0m   [0;1mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id WHERE (ratings.value >= '2') GROUP BY url,artist_name, title, length ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+Completed in 31ms (View: 18, DB: 2) | 200 OK [http://localhost/mp3s/random?rating_min=2&artist_name=Go]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:49:17) [GET]
+  Parameters: {"artist_name"=>"Go", "rating_min"=>"2"}
+  [4;35;1mMp3 Load (1.1ms)[0m   [0mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id WHERE (ratings.value >= '2') ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+Completed in 36ms (View: 25, DB: 2) | 200 OK [http://localhost/mp3s/random?rating_min=2&artist_name=Go]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:50:13) [GET]
+  Parameters: {"artist_name"=>"Go", "rating_min"=>"2"}
+  [4;36;1mMp3 Load (1.1ms)[0m   [0;1mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id WHERE (ratings.value >= '2') ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+Completed in 37ms (View: 26, DB: 2) | 200 OK [http://localhost/mp3s/random?rating_min=2&artist_name=Go]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:50:21) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;35;1mMp3 Load (1.1ms)[0m   [0mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id WHERE (ratings.value >= '2') ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+Completed in 37ms (View: 25, DB: 2) | 200 OK [http://localhost/mp3s/random?rating_min=2]
+
+
+Processing ApplicationController#random (for 127.0.0.1 at 2010-07-19 09:50:48) [GET]
+  Parameters: {"rating_min"=>"2"}
+
+SyntaxError (/Users/Russen/rails_projects/berklee_mp3_app/app/controllers/mp3s_controller.rb:115: syntax error, unexpected tASSOC, expecting kEND
+                         :group => 'url,artist_name, title, length '
+                                  ^):
+  
+
+Rendered rescues/_trace (56.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:50:54) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;36;1mMp3 Load (1.0ms)[0m   [0;1mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id WHERE (ratings.value >= '2') GROUP BY url,artist_name, title, length ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+Completed in 27ms (View: 16, DB: 2) | 200 OK [http://localhost/mp3s/random?rating_min=2]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:50:57) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;35;1mMp3 Load (0.0ms)[0m   [0mSQLite3::SQLException: no such column: artst_name: SELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id WHERE (ratings.value >= '2') GROUP BY url,artst_name, title, length ORDER BY RANDOM()[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: artst_name: SELECT "mp3s".* FROM "mp3s"   INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id  WHERE (ratings.value >= '2')  GROUP BY url,artst_name, title, length  ORDER BY RANDOM()):
+  app/controllers/mp3s_controller.rb:112:in `random'
+
+Rendered rescues/_trace (162.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:51:43) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;36;1mMp3 Load (1.0ms)[0m   [0;1mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id WHERE (ratings.value >= '2') GROUP BY url,artist_name, title, length ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+Completed in 30ms (View: 16, DB: 2) | 200 OK [http://localhost/mp3s/random?rating_min=2]
+
+
+Processing Mp3sController#show (for 127.0.0.1 at 2010-07-19 09:51:48) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mMp3 Load (0.3ms)[0m   [0mSELECT * FROM "mp3s" WHERE ("mp3s"."id" = 3) [0m
+Rendering template within layouts/mp3s
+Rendering mp3s/show
+  [4;36;1mRating Load (0.4ms)[0m   [0;1mSELECT * FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+Completed in 23ms (View: 14, DB: 1) | 200 OK [http://localhost/mp3s/3]
+
+
+Processing RatingsController#edit (for 127.0.0.1 at 2010-07-19 09:51:50) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mRating Load (0.3ms)[0m   [0mSELECT * FROM "ratings" WHERE ("ratings"."id" = 7) [0m
+Rendering template within layouts/ratings
+Rendering ratings/edit
+Completed in 112ms (View: 104, DB: 0) | 200 OK [http://localhost/ratings/7/edit]
+
+
+Processing RatingsController#update (for 127.0.0.1 at 2010-07-19 09:51:53) [PUT]
+  Parameters: {"rating"=>{"mp3_id"=>"3", "value"=>"1"}, "commit"=>"Update", "authenticity_token"=>"sERUT0dYrxxibNH3+NIukatUQGQTiu/vdvGZHnMtcdM=", "id"=>"7"}
+  [4;36;1mRating Load (0.3ms)[0m   [0;1mSELECT * FROM "ratings" WHERE ("ratings"."id" = 7) [0m
+  [4;35;1mRating Update (0.5ms)[0m   [0mUPDATE "ratings" SET "updated_at" = '2010-07-19 13:51:53', "value" = 1 WHERE "id" = 7[0m
+Redirected to http://localhost:3000/ratings/7
+Completed in 15ms (DB: 1) | 302 Found [http://localhost/ratings/7]
+
+
+Processing RatingsController#show (for 127.0.0.1 at 2010-07-19 09:51:53) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mRating Load (0.3ms)[0m   [0;1mSELECT * FROM "ratings" WHERE ("ratings"."id" = 7) [0m
+Rendering template within layouts/ratings
+Rendering ratings/show
+Completed in 18ms (View: 10, DB: 0) | 200 OK [http://localhost/ratings/7]
+
+
+Processing Mp3sController#index (for 127.0.0.1 at 2010-07-19 09:51:55) [GET]
+  [4;35;1mMp3 Load (0.8ms)[0m   [0mSELECT * FROM "mp3s" [0m
+Rendering template within layouts/mp3s
+Rendering mp3s/index
+Completed in 127ms (View: 120, DB: 1) | 200 OK [http://localhost/mp3s]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:51:58) [GET]
+  [4;36;1mMp3 Load (1.0ms)[0m   [0;1mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+Completed in 26ms (View: 15, DB: 2) | 200 OK [http://localhost/mp3s/random]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:52:03) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;35;1mMp3 Load (1.1ms)[0m   [0mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id WHERE (ratings.value >= '2') GROUP BY url,artist_name, title, length ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+Completed in 25ms (View: 11, DB: 1) | 200 OK [http://localhost/mp3s/random?rating_min=2]
+
+
+Processing Mp3sController#index (for 127.0.0.1 at 2010-07-19 09:53:56) [GET]
+  [4;35;1mMp3 Load (1.0ms)[0m   [0mSELECT * FROM "mp3s" [0m
+Rendering template within layouts/mp3s
+Rendering mp3s/index
+
+ActionView::TemplateError (undefined local variable or method `rating_min' for #<ActionView::Base:0x2d58b24>) on line #10 of app/views/mp3s/index.html.erb:
+7: <h2><%= link_to 'All Mp3s', :action => 'random' %></h2>
+8: 
+9: 
+10: <h2><%= link_to 'All Mp3s, 1 star', :action => 'random', rating_min => 1 %></h2>
+11: 
+12: 
+13: <h2><%= link_to 'All Mp3s, 2 star', :action => 'random', :rating_min => 2 %></h2>
+
+    app/views/mp3s/index.html.erb:10
+    app/controllers/mp3s_controller.rb:7:in `index'
+
+Rendered rescues/_trace (187.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#index (for 127.0.0.1 at 2010-07-19 09:54:05) [GET]
+  [4;36;1mMp3 Load (0.9ms)[0m   [0;1mSELECT * FROM "mp3s" [0m
+Rendering template within layouts/mp3s
+Rendering mp3s/index
+Completed in 28ms (View: 20, DB: 1) | 200 OK [http://localhost/mp3s]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:54:09) [GET]
+  Parameters: {"rating_min"=>"1"}
+  [4;35;1mMp3 Load (1.0ms)[0m   [0mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id WHERE (ratings.value >= '1') GROUP BY url,artist_name, title, length ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+Completed in 27ms (View: 16, DB: 2) | 200 OK [http://localhost/mp3s/random?rating_min=1]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:54:13) [GET]
+  Parameters: {"rating_min"=>"3"}
+  [4;36;1mMp3 Load (0.9ms)[0m   [0;1mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id WHERE (ratings.value >= '3') GROUP BY url,artist_name, title, length ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+Completed in 21ms (View: 11, DB: 1) | 200 OK [http://localhost/mp3s/random?rating_min=3]
+
+
+Processing Mp3sController#index (for 127.0.0.1 at 2010-07-19 09:55:10) [GET]
+  [4;36;1mMp3 Load (0.9ms)[0m   [0;1mSELECT * FROM "mp3s" [0m
+Rendering template within layouts/mp3s
+Rendering mp3s/index
+Completed in 21ms (View: 14, DB: 1) | 200 OK [http://localhost/mp3s]
+
+
+Processing Mp3sController#index (for 127.0.0.1 at 2010-07-19 09:55:41) [GET]
+  [4;35;1mMp3 Load (0.8ms)[0m   [0mSELECT * FROM "mp3s" [0m
+Rendering template within layouts/mp3s
+Rendering mp3s/index
+Completed in 28ms (View: 21, DB: 1) | 200 OK [http://localhost/mp3s]
+
+
+Processing Mp3sController#new (for 127.0.0.1 at 2010-07-19 09:55:43) [GET]
+Rendering template within layouts/mp3s
+Rendering mp3s/new
+Completed in 52ms (View: 43, DB: 0) | 200 OK [http://localhost/mp3s/new]
+
+
+Processing Mp3sController#create (for 127.0.0.1 at 2010-07-19 09:55:57) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"sERUT0dYrxxibNH3+NIukatUQGQTiu/vdvGZHnMtcdM=", "mp3"=>{"title"=>"Same Verse", "artist_name"=>"Squeeze", "url"=>"track.mp3", "length"=>"310"}}
+  [4;36;1mMp3 Create (0.5ms)[0m   [0;1mINSERT INTO "mp3s" ("created_at", "title", "artist_name", "updated_at", "url", "length") VALUES('2010-07-19 13:55:57', 'Same Verse', 'Squeeze', '2010-07-19 13:55:57', 'track.mp3', 310)[0m
+Redirected to http://localhost:3000/mp3s/4
+Completed in 15ms (DB: 1) | 302 Found [http://localhost/mp3s]
+
+
+Processing Mp3sController#show (for 127.0.0.1 at 2010-07-19 09:55:57) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mMp3 Load (0.3ms)[0m   [0mSELECT * FROM "mp3s" WHERE ("mp3s"."id" = 4) [0m
+Rendering template within layouts/mp3s
+Rendering mp3s/show
+  [4;36;1mRating Load (0.3ms)[0m   [0;1mSELECT * FROM "ratings" WHERE ("ratings".mp3_id = 4) [0m
+Completed in 109ms (View: 8, DB: 1) | 200 OK [http://localhost/mp3s/4]
+
+
+Processing Mp3sController#new_rating (for 127.0.0.1 at 2010-07-19 09:56:00) [GET]
+  Parameters: {"mp3_id"=>"4"}
+  [4;35;1mMp3 Load (0.4ms)[0m   [0mSELECT * FROM "mp3s" WHERE ("mp3s"."id" = 4) [0m
+Rendering template within layouts/mp3s
+Rendering mp3s/new_rating
+Completed in 23ms (View: 11, DB: 0) | 200 OK [http://localhost/mp3s/new_rating/4]
+
+
+Processing RatingsController#create (for 127.0.0.1 at 2010-07-19 09:56:03) [POST]
+  Parameters: {"rating"=>{"mp3_id"=>"4", "value"=>"1"}, "commit"=>"Create", "authenticity_token"=>"sERUT0dYrxxibNH3+NIukatUQGQTiu/vdvGZHnMtcdM="}
+  [4;36;1mRating Create (0.5ms)[0m   [0;1mINSERT INTO "ratings" ("mp3_id", "created_at", "updated_at", "value") VALUES(4, '2010-07-19 13:56:03', '2010-07-19 13:56:03', 1)[0m
+Redirected to http://localhost:3000/ratings/8
+Completed in 14ms (DB: 1) | 302 Found [http://localhost/ratings]
+
+
+Processing RatingsController#show (for 127.0.0.1 at 2010-07-19 09:56:03) [GET]
+  Parameters: {"id"=>"8"}
+  [4;35;1mRating Load (0.3ms)[0m   [0mSELECT * FROM "ratings" WHERE ("ratings"."id" = 8) [0m
+Rendering template within layouts/ratings
+Rendering ratings/show
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/ratings/8]
+
+
+Processing Mp3sController#index (for 127.0.0.1 at 2010-07-19 09:56:06) [GET]
+  [4;36;1mMp3 Load (0.9ms)[0m   [0;1mSELECT * FROM "mp3s" [0m
+Rendering template within layouts/mp3s
+Rendering mp3s/index
+Completed in 25ms (View: 18, DB: 1) | 200 OK [http://localhost/mp3s]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:58:42) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;35;1mMp3 Load (0.7ms)[0m   [0mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length HAVING ratings.value >= '2' ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+Completed in 14ms (View: 2, DB: 1) | 200 OK [http://localhost/mp3s/random?rating_min=2]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:58:52) [GET]
+  [4;36;1mMp3 Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: itle: SELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, itle, length ORDER BY RANDOM()[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: itle: SELECT "mp3s".* FROM "mp3s"   INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id   GROUP BY url,artist_name, itle, length  ORDER BY RANDOM()):
+  app/controllers/mp3s_controller.rb:112:in `random'
+
+Rendered rescues/_trace (165.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:59:32) [GET]
+  [4;35;1mMp3 Load (1.2ms)[0m   [0mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 4) [0m
+Completed in 33ms (View: 21, DB: 2) | 200 OK [http://localhost/mp3s/random]
+
+
+Processing Mp3sController#index (for 127.0.0.1 at 2010-07-19 09:59:36) [GET]
+  [4;35;1mMp3 Load (0.9ms)[0m   [0mSELECT * FROM "mp3s" [0m
+Rendering template within layouts/mp3s
+Rendering mp3s/index
+Completed in 25ms (View: 18, DB: 1) | 200 OK [http://localhost/mp3s]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:59:37) [GET]
+  Parameters: {"rating_min"=>"1"}
+  [4;36;1mMp3 Load (1.1ms)[0m   [0;1mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length HAVING ratings.value >= '1' ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "ratings" WHERE ("ratings".mp3_id = 4) [0m
+Completed in 31ms (View: 20, DB: 2) | 200 OK [http://localhost/mp3s/random?rating_min=1]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:59:40) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;36;1mMp3 Load (0.7ms)[0m   [0;1mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length HAVING ratings.value >= '2' ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+Completed in 12ms (View: 2, DB: 1) | 200 OK [http://localhost/mp3s/random?rating_min=2]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:59:45) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;35;1mMp3 Load (0.8ms)[0m   [0mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length HAVING ratings.value >= '2' ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+Completed in 12ms (View: 2, DB: 1) | 200 OK [http://localhost/mp3s/random?rating_min=2]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 09:59:50) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;36;1mMp3 Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: itle: SELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, itle, length HAVING ratings.value >= '2' ORDER BY RANDOM()[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: itle: SELECT "mp3s".* FROM "mp3s"   INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id   GROUP BY url,artist_name, itle, length  HAVING ratings.value >= '2' ORDER BY RANDOM()):
+  app/controllers/mp3s_controller.rb:112:in `random'
+
+Rendered rescues/_trace (169.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:00:44) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;35;1mMp3 Load (0.0ms)[0m   [0mSQLite3::SQLException: no such function: average: SELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length HAVING average(ratings.value) >= '2' ORDER BY RANDOM()[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such function: average: SELECT "mp3s".* FROM "mp3s"   INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id   GROUP BY url,artist_name, title, length  HAVING average(ratings.value) >= '2' ORDER BY RANDOM()):
+  app/controllers/mp3s_controller.rb:112:in `random'
+
+Rendered rescues/_trace (75.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:00:53) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;36;1mMp3 Load (0.8ms)[0m   [0;1mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length HAVING AVG(ratings.value) >= '2' ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+Completed in 12ms (View: 2, DB: 1) | 200 OK [http://localhost/mp3s/random?rating_min=2]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:07:09) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;35;1mMp3 Load (0.7ms)[0m   [0mSELECT url, artist_name, title, length, AVG(ratings.value) as avg_rating FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length HAVING AVG(ratings.value) >= '2' ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+Completed in 101ms (View: 2, DB: 1) | 200 OK [http://localhost/mp3s/random?rating_min=2]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:07:10) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;36;1mMp3 Load (0.7ms)[0m   [0;1mSELECT url, artist_name, title, length, AVG(ratings.value) as avg_rating FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length HAVING AVG(ratings.value) >= '2' ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+Completed in 12ms (View: 2, DB: 1) | 200 OK [http://localhost/mp3s/random?rating_min=2]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:07:15) [GET]
+  Parameters: {"rating_min"=>"1"}
+  [4;35;1mMp3 Load (0.7ms)[0m   [0mSELECT url, artist_name, title, length, AVG(ratings.value) as avg_rating FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length HAVING AVG(ratings.value) >= '1' ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+Completed in 14ms (View: 2, DB: 1) | 200 OK [http://localhost/mp3s/random?rating_min=1]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:07:27) [GET]
+  Parameters: {"rating_min"=>"1"}
+  [4;36;1mMp3 Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: rtings.value: SELECT url, artist_name, title, length, AVG(ratings.value) as avg_rating FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length HAVING AVG(rtings.value) >= '1' ORDER BY RANDOM()[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: rtings.value: SELECT url, artist_name, title, length, AVG(ratings.value) as avg_rating FROM "mp3s"   INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id   GROUP BY url,artist_name, title, length  HAVING AVG(rtings.value) >= '1' ORDER BY RANDOM()):
+  app/controllers/mp3s_controller.rb:114:in `random'
+
+Rendered rescues/_trace (73.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:09:27) [GET]
+  Parameters: {"rating_min"=>"1"}
+  [4;35;1mMp3 Load (0.0ms)[0m   [0mSQLite3::SQLException: no such column: rtings.value: SELECT url, artist_name, title, length, AVG(ratings.value) as avg_rating FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length HAVING AVG(rtings.value) >= '1' ORDER BY RANDOM()[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: rtings.value: SELECT url, artist_name, title, length, AVG(ratings.value) as avg_rating FROM "mp3s"   INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id   GROUP BY url,artist_name, title, length  HAVING AVG(rtings.value) >= '1' ORDER BY RANDOM()):
+  app/controllers/mp3s_controller.rb:114:in `random'
+
+Rendered rescues/_trace (165.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:09:43) [GET]
+  Parameters: {"rating_min"=>"1"}
+  [4;36;1mMp3 Load (0.7ms)[0m   [0;1mSELECT url, artist_name, title, length, AVG(ratings.value) as avg_rating FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length HAVING AVG(ratings.value) >= '1' ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://localhost/mp3s/random?rating_min=1]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:09:49) [GET]
+  Parameters: {"rating_min"=>"1"}
+
+NameError (undefined local variable or method `having' for #<Mp3sController:0x2d53584>):
+  app/controllers/mp3s_controller.rb:119:in `random'
+
+Rendered rescues/_trace (60.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:09:59) [GET]
+  Parameters: {"rating_min"=>"1"}
+  [4;35;1mMp3 Load (1.0ms)[0m   [0mSELECT url, artist_name, title, length, AVG(ratings.value) as avg_rating FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+
+ActionView::TemplateError (mp3_url failed to generate from {:controller=>"mp3s", :action=>"show", :id=>#<Mp3 url: "track.mp3", title: "Same Verse", artist_name: "Squeeze", length: 310>}, expected: {:controller=>"mp3s", :action=>"show"}, diff: {:id=>#<Mp3 url: "track.mp3", title: "Same Verse", artist_name: "Squeeze", length: 310>}) on line #24 of app/views/mp3s/random.html.erb:
+21:     <td><%=h mp3.length %></td>
+22:     <td><%=h mp3.avg_rating %></td>
+23:     <td><%= link_to 'Rate This', :action => 'new_rating' , :mp3_id => mp3.id %></td>
+24:     <td><%= link_to 'Show', mp3 %></td>
+25:     <td><%= link_to 'Edit', edit_mp3_path(mp3) %></td>
+26:     <td><%= link_to 'Destroy', mp3, :confirm => 'Are you sure?', :method => :delete %></td>
+27:   </tr>
+
+    (eval):16:in `mp3_path'
+    app/views/mp3s/random.html.erb:24
+    app/views/mp3s/random.html.erb:16:in `each'
+    app/views/mp3s/random.html.erb:16
+
+Rendered rescues/_trace (94.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:10:19) [GET]
+  Parameters: {"rating_min"=>"1"}
+  [4;36;1mMp3 Load (1.0ms)[0m   [0;1mSELECT mp3s.url, artist_name, title, length, AVG(ratings.value) as avg_rating FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+
+ActionView::TemplateError (mp3_url failed to generate from {:controller=>"mp3s", :action=>"show", :id=>#<Mp3 url: "track.mp3", title: "Same Verse", artist_name: "Squeeze", length: 310>}, expected: {:controller=>"mp3s", :action=>"show"}, diff: {:id=>#<Mp3 url: "track.mp3", title: "Same Verse", artist_name: "Squeeze", length: 310>}) on line #24 of app/views/mp3s/random.html.erb:
+21:     <td><%=h mp3.length %></td>
+22:     <td><%=h mp3.avg_rating %></td>
+23:     <td><%= link_to 'Rate This', :action => 'new_rating' , :mp3_id => mp3.id %></td>
+24:     <td><%= link_to 'Show', mp3 %></td>
+25:     <td><%= link_to 'Edit', edit_mp3_path(mp3) %></td>
+26:     <td><%= link_to 'Destroy', mp3, :confirm => 'Are you sure?', :method => :delete %></td>
+27:   </tr>
+
+    (eval):16:in `mp3_path'
+    app/views/mp3s/random.html.erb:24
+    app/views/mp3s/random.html.erb:16:in `each'
+    app/views/mp3s/random.html.erb:16
+
+Rendered rescues/_trace (181.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:10:58) [GET]
+  Parameters: {"rating_min"=>"1"}
+  [4;35;1mMp3 Load (1.0ms)[0m   [0mSELECT mp3s.url as mp3_url, artist_name, title, length, AVG(ratings.value) as avg_rating FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+
+ActionView::TemplateError (missing attribute: url) on line #18 of app/views/mp3s/random.html.erb:
+15: 
+16: <% @mp3s.each do |mp3| %>
+17:   <tr>
+18:     <td><a href="/storage/mp3<%=h mp3.url %>">DOWNLOAD</a></td>
+19:     <td><%=h mp3.title %></td>
+20:     <td><%=h mp3.artist_name %></td>
+21:     <td><%=h mp3.length %></td>
+
+    app/views/mp3s/random.html.erb:18
+    app/views/mp3s/random.html.erb:16:in `each'
+    app/views/mp3s/random.html.erb:16
+
+Rendered rescues/_trace (79.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:11:07) [GET]
+  Parameters: {"rating_min"=>"1"}
+  [4;36;1mMp3 Load (1.0ms)[0m   [0;1mSELECT mp3s.url as url, artist_name, title, length, AVG(ratings.value) as avg_rating FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+
+ActionView::TemplateError (mp3_url failed to generate from {:controller=>"mp3s", :action=>"show", :id=>#<Mp3 url: "listen.mp3", title: "First track", artist_name: "True Prevention", length: 360>}, expected: {:controller=>"mp3s", :action=>"show"}, diff: {:id=>#<Mp3 url: "listen.mp3", title: "First track", artist_name: "True Prevention", length: 360>}) on line #24 of app/views/mp3s/random.html.erb:
+21:     <td><%=h mp3.length %></td>
+22:     <td><%=h mp3.avg_rating %></td>
+23:     <td><%= link_to 'Rate This', :action => 'new_rating' , :mp3_id => mp3.id %></td>
+24:     <td><%= link_to 'Show', mp3 %></td>
+25:     <td><%= link_to 'Edit', edit_mp3_path(mp3) %></td>
+26:     <td><%= link_to 'Destroy', mp3, :confirm => 'Are you sure?', :method => :delete %></td>
+27:   </tr>
+
+    (eval):16:in `mp3_path'
+    app/views/mp3s/random.html.erb:24
+    app/views/mp3s/random.html.erb:16:in `each'
+    app/views/mp3s/random.html.erb:16
+
+Rendered rescues/_trace (90.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:11:17) [GET]
+  Parameters: {"rating_min"=>"1"}
+  [4;35;1mMp3 Load (1.1ms)[0m   [0mSELECT mp3s.url as mp3_url, artist_name, title, length, AVG(ratings.value) as avg_rating FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+
+ActionView::TemplateError (missing attribute: url) on line #18 of app/views/mp3s/random.html.erb:
+15: 
+16: <% @mp3s.each do |mp3| %>
+17:   <tr>
+18:     <td><a href="/storage/mp3<%=h mp3.url %>">DOWNLOAD</a></td>
+19:     <td><%=h mp3.title %></td>
+20:     <td><%=h mp3.artist_name %></td>
+21:     <td><%=h mp3.length %></td>
+
+    app/views/mp3s/random.html.erb:18
+    app/views/mp3s/random.html.erb:16:in `each'
+    app/views/mp3s/random.html.erb:16
+
+Rendered rescues/_trace (182.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:11:42) [GET]
+  Parameters: {"rating_min"=>"1"}
+  [4;36;1mMp3 Load (1.0ms)[0m   [0;1mSELECT mp3s.url as mp3_url, artist_name, title, length, AVG(ratings.value) as avg_rating FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+
+ActionView::TemplateError (mp3_url failed to generate from {:controller=>"mp3s", :action=>"show", :id=>#<Mp3 title: "Same Verse", artist_name: "Squeeze", length: 310>}, expected: {:controller=>"mp3s", :action=>"show"}, diff: {:id=>#<Mp3 title: "Same Verse", artist_name: "Squeeze", length: 310>}) on line #24 of app/views/mp3s/random.html.erb:
+21:     <td><%=h mp3.length %></td>
+22:     <td><%=h mp3.avg_rating %></td>
+23:     <td><%= link_to 'Rate This', :action => 'new_rating' , :mp3_id => mp3.id %></td>
+24:     <td><%= link_to 'Show', mp3 %></td>
+25:     <td><%= link_to 'Edit', edit_mp3_path(mp3) %></td>
+26:     <td><%= link_to 'Destroy', mp3, :confirm => 'Are you sure?', :method => :delete %></td>
+27:   </tr>
+
+    (eval):16:in `mp3_path'
+    app/views/mp3s/random.html.erb:24
+    app/views/mp3s/random.html.erb:16:in `each'
+    app/views/mp3s/random.html.erb:16
+
+Rendered rescues/_trace (187.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:12:07) [GET]
+  Parameters: {"rating_min"=>"1"}
+  [4;35;1mMp3 Load (1.0ms)[0m   [0mSELECT mp3s.url as mp3_url, artist_name, title, length, AVG(ratings.value) as avg_rating FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+
+ActionView::TemplateError (missing attribute: url) on line #18 of app/views/mp3s/random.html.erb:
+15: 
+16: <% @mp3s.each do |mp3| %>
+17:   <tr>
+18:     <td><a href="/storage/mp3<%=h mp3.url %>">DOWNLOAD</a></td>
+19:     <td><%=h mp3.title %></td>
+20:     <td><%=h mp3.artist_name %></td>
+21:     <td><%=h mp3.length %></td>
+
+    app/views/mp3s/random.html.erb:18
+    app/views/mp3s/random.html.erb:16:in `each'
+    app/views/mp3s/random.html.erb:16
+
+Rendered rescues/_trace (85.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:12:15) [GET]
+  Parameters: {"rating_min"=>"1"}
+  [4;36;1mMp3 Load (1.0ms)[0m   [0;1mSELECT mp3s.url as mp3_url, artist_name, title, length, AVG(ratings.value) as avg_rating FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+
+ActionView::TemplateError (mp3_url failed to generate from {:controller=>"mp3s", :action=>"show", :id=>#<Mp3 title: "Same Verse", artist_name: "Squeeze", length: 310>}, expected: {:controller=>"mp3s", :action=>"show"}, diff: {:id=>#<Mp3 title: "Same Verse", artist_name: "Squeeze", length: 310>}) on line #24 of app/views/mp3s/random.html.erb:
+21:     <td><%=h mp3.length %></td>
+22:     <td><%=h mp3.avg_rating %></td>
+23:     <td><%= link_to 'Rate This', :action => 'new_rating' , :mp3_id => mp3.id %></td>
+24:     <td><%= link_to 'Show', mp3 %></td>
+25:     <td><%= link_to 'Edit', edit_mp3_path(mp3) %></td>
+26:     <td><%= link_to 'Destroy', mp3, :confirm => 'Are you sure?', :method => :delete %></td>
+27:   </tr>
+
+    (eval):16:in `mp3_path'
+    app/views/mp3s/random.html.erb:24
+    app/views/mp3s/random.html.erb:16:in `each'
+    app/views/mp3s/random.html.erb:16
+
+Rendered rescues/_trace (90.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:13:16) [GET]
+  Parameters: {"rating_min"=>"1"}
+  [4;35;1mMp3 Load (1.1ms)[0m   [0mSELECT mp3s.url as mp3_url, mp3s.id as mp3_id, artist_name, title, length, AVG(ratings.value) as avg_rating FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+
+ActionView::TemplateError (mp3_url failed to generate from {:controller=>"mp3s", :action=>"show", :id=>#<Mp3 title: "Same Verse", artist_name: "Squeeze", length: 310>}, expected: {:controller=>"mp3s", :action=>"show"}, diff: {:id=>#<Mp3 title: "Same Verse", artist_name: "Squeeze", length: 310>}) on line #24 of app/views/mp3s/random.html.erb:
+21:     <td><%=h mp3.length %></td>
+22:     <td><%=h mp3.avg_rating %></td>
+23:     <td><%= link_to 'Rate This', :action => 'new_rating' , :mp3_id => mp3.id %></td>
+24:     <td><%= link_to 'Show', mp3 %></td>
+25:     <td><%= link_to 'Edit', edit_mp3_path(mp3) %></td>
+26:     <td><%= link_to 'Destroy', mp3, :confirm => 'Are you sure?', :method => :delete %></td>
+27:   </tr>
+
+    (eval):16:in `mp3_path'
+    app/views/mp3s/random.html.erb:24
+    app/views/mp3s/random.html.erb:16:in `each'
+    app/views/mp3s/random.html.erb:16
+
+Rendered rescues/_trace (179.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#random (for 127.0.0.1 at 2010-07-19 10:13:30) [GET]
+  Parameters: {"rating_min"=>"1"}
+
+SyntaxError (/Users/Russen/rails_projects/berklee_mp3_app/app/controllers/mp3s_controller.rb:128: syntax error, unexpected kEND):
+  
+
+Rendered rescues/_trace (57.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:13:37) [GET]
+  Parameters: {"rating_min"=>"1"}
+  [4;36;1mMp3 Load (1.1ms)[0m   [0;1mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+
+ActionView::TemplateError (undefined method `mp3_url' for #<Mp3:0x2cb3124>) on line #18 of app/views/mp3s/random.html.erb:
+15: 
+16: <% @mp3s.each do |mp3| %>
+17:   <tr>
+18:     <td><a href="/storage/mp3<%=h mp3.mp3_url %>">DOWNLOAD</a></td>
+19:     <td><%=h mp3.title %></td>
+20:     <td><%=h mp3.artist_name %></td>
+21:     <td><%=h mp3.length %></td>
+
+    app/views/mp3s/random.html.erb:18
+    app/views/mp3s/random.html.erb:16:in `each'
+    app/views/mp3s/random.html.erb:16
+
+Rendered rescues/_trace (174.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:13:49) [GET]
+  Parameters: {"rating_min"=>"1"}
+  [4;35;1mMp3 Load (1.1ms)[0m   [0mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+
+ActionView::TemplateError (undefined method `avg_rating' for #<Mp3:0x2dab02c>) on line #22 of app/views/mp3s/random.html.erb:
+19:     <td><%=h mp3.title %></td>
+20:     <td><%=h mp3.artist_name %></td>
+21:     <td><%=h mp3.length %></td>
+22:     <td><%=h mp3.avg_rating %></td>
+23:     <td><%= link_to 'Rate This', :action => 'new_rating' , :mp3_id => mp3.id %></td>
+24:     <td><%= link_to 'Show', mp3 %></td>
+25:     <td><%= link_to 'Edit', edit_mp3_path(mp3) %></td>
+
+    app/views/mp3s/random.html.erb:22
+    app/views/mp3s/random.html.erb:16:in `each'
+    app/views/mp3s/random.html.erb:16
+
+Rendered rescues/_trace (78.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:14:02) [GET]
+  Parameters: {"rating_min"=>"1"}
+  [4;36;1mMp3 Load (1.1ms)[0m   [0;1mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+
+ActionView::TemplateError (wrong number of arguments (0 for 1)) on line #22 of app/views/mp3s/random.html.erb:
+19:     <td><%=h mp3.title %></td>
+20:     <td><%=h mp3.artist_name %></td>
+21:     <td><%=h mp3.length %></td>
+22:     <td><%=h mp3.ratings.average %></td>
+23:     <td><%= link_to 'Rate This', :action => 'new_rating' , :mp3_id => mp3.id %></td>
+24:     <td><%= link_to 'Show', mp3 %></td>
+25:     <td><%= link_to 'Edit', edit_mp3_path(mp3) %></td>
+
+    /Library/Ruby/Gems/1.8/gems/will_paginate-2.3.12/lib/will_paginate/finder.rb:170:in `method_missing'
+    app/views/mp3s/random.html.erb:22
+    app/views/mp3s/random.html.erb:16:in `each'
+    app/views/mp3s/random.html.erb:16
+
+Rendered rescues/_trace (86.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:15:02) [GET]
+  Parameters: {"rating_min"=>"1"}
+  [4;35;1mMp3 Load (1.2ms)[0m   [0mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 4) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+Completed in 42ms (View: 29, DB: 2) | 200 OK [http://localhost/mp3s/random?rating_min=1]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:15:10) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;35;1mMp3 Load (1.2ms)[0m   [0mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 4) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+Completed in 32ms (View: 20, DB: 2) | 200 OK [http://localhost/mp3s/random?rating_min=2]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:15:27) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;35;1mMp3 Load (0.0ms)[0m   [0mSQLite3::SQLException: no such column: itle: SELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, itle, length ORDER BY RANDOM()[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: itle: SELECT "mp3s".* FROM "mp3s"   INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id   GROUP BY url,artist_name, itle, length  ORDER BY RANDOM()):
+  app/controllers/mp3s_controller.rb:117:in `random'
+
+Rendered rescues/_trace (73.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:15:46) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;36;1mMp3 Load (0.7ms)[0m   [0;1mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length HAVING AVG(ratings.value) >= '2' ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+Completed in 12ms (View: 2, DB: 1) | 200 OK [http://localhost/mp3s/random?rating_min=2]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:15:51) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;35;1mMp3 Load (0.0ms)[0m   [0mSQLite3::SQLException: no such column: ttle: SELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, ttle, length HAVING AVG(ratings.value) >= '2' ORDER BY RANDOM()[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: ttle: SELECT "mp3s".* FROM "mp3s"   INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id   GROUP BY url,artist_name, ttle, length  HAVING AVG(ratings.value) >= '2' ORDER BY RANDOM()):
+  app/controllers/mp3s_controller.rb:115:in `random'
+
+Rendered rescues/_trace (161.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:16:30) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;36;1mMp3 Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such column: ttle: SELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, ttle, length HAVING AVG(ratings.value) >= 2 ORDER BY RANDOM()[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: ttle: SELECT "mp3s".* FROM "mp3s"   INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id   GROUP BY url,artist_name, ttle, length  HAVING AVG(ratings.value) >= 2 ORDER BY RANDOM()):
+  app/controllers/mp3s_controller.rb:115:in `random'
+
+Rendered rescues/_trace (79.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:16:35) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;35;1mMp3 Load (0.9ms)[0m   [0mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length HAVING AVG(ratings.value) >= 2 ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+Completed in 22ms (View: 10, DB: 1) | 200 OK [http://localhost/mp3s/random?rating_min=2]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:16:52) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;35;1mMp3 Load (0.7ms)[0m   [0mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length HAVING AVG(ratings.value) >= '2' ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+Completed in 12ms (View: 2, DB: 1) | 200 OK [http://localhost/mp3s/random?rating_min=2]
+
+
+Processing ApplicationController#random (for 127.0.0.1 at 2010-07-19 10:17:00) [GET]
+  Parameters: {"rating_min"=>"2"}
+
+SyntaxError (/Users/Russen/rails_projects/berklee_mp3_app/app/controllers/mp3s_controller.rb:101: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+...tings.value) >= ?", int params[:rating_min] ] unless params[...
+                              ^
+/Users/Russen/rails_projects/berklee_mp3_app/app/controllers/mp3s_controller.rb:101: syntax error, unexpected ']', expecting kEND
+... ?", int params[:rating_min] ] unless params[:rating_min].ni...
+                              ^):
+  
+
+Rendered rescues/_trace (147.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#random (for 127.0.0.1 at 2010-07-19 10:17:05) [GET]
+  Parameters: {"rating_min"=>"2"}
+
+SyntaxError (/Users/Russen/rails_projects/berklee_mp3_app/app/controllers/mp3s_controller.rb:101: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+...s.value) >= ?", integer params[:rating_min] ] unless params[...
+                              ^
+/Users/Russen/rails_projects/berklee_mp3_app/app/controllers/mp3s_controller.rb:101: syntax error, unexpected ']', expecting kEND
+... integer params[:rating_min] ] unless params[:rating_min].ni...
+                              ^):
+  
+
+Rendered rescues/_trace (56.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:17:16) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;36;1mMp3 Load (0.7ms)[0m   [0;1mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length HAVING AVG(ratings.value) >= '2' ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+Completed in 13ms (View: 2, DB: 1) | 200 OK [http://localhost/mp3s/random?rating_min=2]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:18:40) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;35;1mMp3 Load (0.7ms)[0m   [0mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length HAVING AVG(ratings.value) >= '2' ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+Completed in 12ms (View: 2, DB: 1) | 200 OK [http://localhost/mp3s/random?rating_min=2]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:18:46) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;36;1mMp3 Load (0.9ms)[0m   [0;1mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length HAVING AVG(ratings.value) >= 2 ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+Completed in 111ms (View: 99, DB: 1) | 200 OK [http://localhost/mp3s/random?rating_min=2]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:19:50) [GET]
+  Parameters: {"rating_min"=>"2"}
+  [4;36;1mMp3 Load (1.0ms)[0m   [0;1mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length HAVING AVG(ratings.value) >= 2 ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+Completed in 23ms (View: 12, DB: 1) | 200 OK [http://localhost/mp3s/random?rating_min=2]
+
+
+Processing Mp3sController#random (for 127.0.0.1 at 2010-07-19 10:20:13) [GET]
+  [4;36;1mMp3 Load (1.3ms)[0m   [0;1mSELECT "mp3s".* FROM "mp3s" INNER JOIN "ratings" ON ratings.mp3_id = mp3s.id GROUP BY url,artist_name, title, length ORDER BY RANDOM()[0m
+Rendering template within layouts/mp3s
+Rendering mp3s/random
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 4) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 2) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT avg("ratings".value) AS avg_value FROM "ratings" WHERE ("ratings".mp3_id = 3) [0m
+Completed in 34ms (View: 22, DB: 2) | 200 OK [http://localhost/mp3s/random]

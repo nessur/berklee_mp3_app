@@ -1,0 +1,13 @@
+<p>
+  <b>Value:</b>
+  <%=h @rating.value %>
+</p>
+
+<p>
+  <b>Mp3:</b>
+  <%=h @rating.mp3_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_rating_path(@rating) %> |
+<%= link_to 'Back', mp3s_path %>
