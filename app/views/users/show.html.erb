@@ -15,3 +15,23 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Content</th>
+    <th>User ID</th>
+  </tr>
+
+<% @user.microposts.each do |micro| %>
+  <tr>
+    <td><%=h micro.id %></td>
+    <td><%=h micro.content %></td>
+    <td><%=h micro.user_id %></td>
+    <td><%= link_to 'Show', micro %></td>
+    <td><%= link_to 'Edit', edit_micropost_path(micro) %></td>
+    <td><%= link_to 'Destroy', micro, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
