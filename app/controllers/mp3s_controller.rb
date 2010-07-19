@@ -98,6 +98,8 @@ class Mp3sController < ApplicationController
 
       conditions = ["artist_name LIKE ?", "%#{params[:artist_name]}%"] unless params[:artist_name].nil?
       
+      group_by = 'mp3s.id, url, artist_name, title, length '
+      
       having = ["AVG(ratings.value) >= ?", Integer(params[:rating_min]) ] unless params[:rating_min].nil?
 
       sort = 'RANDOM()'
@@ -111,7 +113,7 @@ class Mp3sController < ApplicationController
     @mp3s = Mp3.find :all, :order => 'RANDOM()', 
                          :conditions => conditions,
                          :joins => :ratings,
-                         :group => 'url,artist_name,title, length ',
+                         :group => group_by,
                          :having => having,
                          :select => select
                           
